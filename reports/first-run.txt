@@ -1,0 +1,215 @@
+PASS 001_canonicalize_sorted_keys_and_whitespace.json: sorted keys and whitespace
+PASS 002_canonicalize_utf16_key_order.json: utf16 key order
+PASS 003_canonicalize_string_escapes.json: string escapes
+PASS 004_canonicalize_negative_and_zero.json: negative and zero
+PASS 005_canonicalize_float.json: float
+PASS 006_canonicalize_exponent.json: exponent
+PASS 007_canonicalize_integer_with_fraction_zero.json: integer with fraction zero
+PASS 008_canonicalize_beyond_safe_range.json: beyond safe range
+PASS 009_canonicalize_duplicate_key.json: duplicate key
+PASS 010_canonicalize_duplicate_key_nested.json: duplicate key nested
+PASS 011_canonicalize_lone_high_surrogate.json: lone high surrogate
+PASS 012_canonicalize_lone_low_surrogate.json: lone low surrogate
+PASS 013_canonicalize_trailing_data.json: trailing data
+PASS 014_narrows_max_equal.json: max equal
+PASS 015_narrows_max_smaller.json: max smaller
+PASS 016_narrows_max_larger.json: max larger
+PASS 017_narrows_count_smaller.json: count smaller
+PASS 018_narrows_count_larger.json: count larger
+PASS 019_narrows_prefix_deeper_segment.json: prefix deeper segment
+PASS 020_narrows_prefix_equal.json: prefix equal
+PASS 021_narrows_prefix_under_slash_form.json: prefix under slash form
+PASS 022_narrows_prefix_segment_escape.json: prefix segment escape
+PASS 023_narrows_prefix_shorter.json: prefix shorter
+PASS 024_narrows_prefix_chargeback.json: prefix chargeback
+PASS 025_narrows_set_subset.json: set subset
+PASS 026_narrows_set_empty.json: set empty
+PASS 027_narrows_set_not_subset.json: set not subset
+PASS 028_narrows_set_int_vs_string.json: set int vs string
+PASS 029_narrows_window_inside.json: window inside
+PASS 030_narrows_window_equal.json: window equal
+PASS 031_narrows_window_low_escapes.json: window low escapes
+PASS 032_narrows_window_high_escapes.json: window high escapes
+PASS 033_narrows_type_changed.json: type changed
+PASS 034_narrows_unknown_type.json: unknown type
+PASS 035_narrows_max_negative.json: max negative
+PASS 036_narrows_window_inverted.json: window inverted
+PASS 037_narrows_set_duplicate.json: set duplicate
+PASS 038_narrows_extra_member.json: extra member
+PASS 039_narrows_value_wrong_json_type.json: value wrong json type
+PASS 040_satisfies_max_at_limit.json: max at limit
+PASS 041_satisfies_max_over.json: max over
+PASS 042_satisfies_max_negative_arg.json: max negative arg
+PASS 043_satisfies_max_string_arg.json: max string arg
+PASS 044_satisfies_prefix_match.json: prefix match
+PASS 045_satisfies_prefix_segment_mismatch.json: prefix segment mismatch
+PASS 046_satisfies_set_member.json: set member
+PASS 047_satisfies_set_case.json: set case
+PASS 048_satisfies_set_int_member.json: set int member
+PASS 049_satisfies_set_int_as_string.json: set int as string
+PASS 050_satisfies_window_edge.json: window edge
+PASS 051_satisfies_window_over.json: window over
+PASS 052_verify_writ_root_writ.json: root writ
+PASS 053_verify_writ_child_writ.json: child writ
+PASS 054_verify_writ_tampered_exp.json: tampered exp
+PASS 055_verify_writ_wrong_signer.json: wrong signer
+PASS 056_verify_writ_typ_call.json: typ call
+PASS 057_verify_writ_version_2.json: version 2
+PASS 058_verify_writ_crit_unknown.json: crit unknown
+PASS 059_verify_writ_crit_names_absent_member.json: crit names absent member
+PASS 060_verify_writ_missing_act.json: missing act
+PASS 061_verify_writ_act_not_prefix.json: act not prefix
+PASS 062_verify_writ_unknown_bound_type.json: unknown bound type
+PASS 063_verify_writ_short_nonce.json: short nonce
+PASS 064_verify_writ_padded_signature.json: padded signature
+PASS 065_verify_writ_non_canonical_trailing_bits.json: non canonical trailing bits
+PASS 066_verify_writ_signature_wrong_length.json: signature wrong length
+PASS 067_verify_writ_did_web_holder.json: did web holder
+PASS 068_verify_writ_secp256k1_did_key.json: secp256k1 did key
+PASS 069_verify_writ_prv_not_a_hash.json: prv not a hash
+PASS 070_verify_writ_prv_absent.json: prv absent
+PASS 071_verify_writ_exp_string.json: exp string
+PASS 072_verify_writ_hld_bound_with_non_key.json: hld bound with non key
+PASS 073_verify_writ_writ_over_4096_bytes.json: writ over 4096 bytes
+PASS 074_verify_chain_two_links.json: two links
+PASS 075_verify_chain_three_links.json: three links
+PASS 076_verify_chain_single_root.json: single root
+PASS 077_verify_chain_root_expired.json: root expired
+PASS 078_verify_chain_child_expired_only.json: child expired only
+PASS 079_verify_chain_wrong_order.json: wrong order
+PASS 080_verify_chain_root_prv_not_null.json: root prv not null
+PASS 081_verify_chain_issuer_not_parent_holder.json: issuer not parent holder
+PASS 082_verify_chain_prv_mismatch.json: prv mismatch
+PASS 083_verify_chain_child_outlives_parent.json: child outlives parent
+PASS 084_verify_chain_child_widens_max.json: child widens max
+PASS 085_verify_chain_child_drops_bound.json: child drops bound
+PASS 086_verify_chain_child_retypes_bound.json: child retypes bound
+PASS 087_verify_chain_child_widens_set.json: child widens set
+PASS 088_verify_chain_child_widens_window.json: child widens window
+PASS 089_verify_chain_child_escapes_act_segment.json: child escapes act segment
+PASS 090_verify_chain_child_adds_bound.json: child adds bound
+PASS 091_verify_chain_hld_set_honored.json: hld set honored
+PASS 092_verify_chain_hld_set_violated.json: hld set violated
+PASS 093_verify_chain_depth_exceeded.json: depth exceeded
+PASS 094_verify_chain_depth_honored.json: depth honored
+PASS 095_verify_chain_nine_links.json: nine links
+PASS 096_verify_chain_eight_links.json: eight links
+PASS 097_verify_chain_empty_chain.json: empty chain
+PASS 098_verify_call_forward_call.json: forward call
+PASS 099_verify_call_forward_call_deeper_op.json: forward call deeper op
+PASS 100_verify_call_forward_call_extra_arg.json: forward call extra arg
+PASS 101_verify_call_from_is_holder.json: from is holder
+PASS 102_verify_call_from_is_stranger.json: from is stranger
+PASS 103_verify_call_from_is_root_not_leaf_issuer.json: from is root not leaf issuer
+PASS 104_verify_call_op_outside_act.json: op outside act
+PASS 105_verify_call_op_segment_escape.json: op segment escape
+PASS 106_verify_call_act_prefix_sys_does_not_grant_standing.json: act prefix sys does not grant standing
+PASS 107_verify_call_missing_amount.json: missing amount
+PASS 108_verify_call_amount_over_max.json: amount over max
+PASS 109_verify_call_currency_not_in_set.json: currency not in set
+PASS 110_verify_call_date_outside_window.json: date outside window
+PASS 111_verify_call_standing_call_by_root.json: standing call by root
+PASS 112_verify_call_standing_call_by_intermediate.json: standing call by intermediate
+PASS 113_verify_call_standing_call_by_holder.json: standing call by holder
+PASS 114_verify_call_call_chain_broken.json: call chain broken
+PASS 115_verify_call_call_short_id.json: call short id
+PASS 116_verify_call_call_tampered.json: call tampered
+PASS 117_verify_tally_leaf_tally.json: leaf tally
+PASS 118_verify_tally_tally_with_sub_tree.json: tally with sub tree
+PASS 119_verify_tally_tally_without_body.json: tally without body
+PASS 120_verify_tally_tally_body_mismatch.json: tally body mismatch
+PASS 121_verify_tally_tally_for_other_call.json: tally for other call
+PASS 122_verify_tally_tally_wrong_signer.json: tally wrong signer
+PASS 123_verify_tally_tally_acc_at_exp.json: tally acc at exp
+PASS 124_verify_tally_tally_used_over_max.json: tally used over max
+PASS 125_verify_tally_tally_sub_without_wrt.json: tally sub without wrt
+PASS 126_verify_tally_tally_wrong_writ.json: tally wrong writ
+PASS 127_verify_tally_tally_wrong_op.json: tally wrong op
+PASS 128_verify_tally_tally_pending_with_used.json: tally pending with used
+PASS 129_verify_tally_tally_ok_with_err.json: tally ok with err
+PASS 130_verify_tally_tally_failed_without_err.json: tally failed without err
+PASS 131_verify_tally_tally_typ_writ.json: tally typ writ
+PASS 132_verify_tally_tally_missing_sub.json: tally missing sub
+PASS 133_verify_tally_sub_tally_over_its_writ_max.json: sub tally over its writ max
+PASS 134_verify_tally_sum_of_sub_exceeds_parent_max.json: sum of sub exceeds parent max
+PASS 135_verify_tally_sub_tally_wrong_signer.json: sub tally wrong signer
+PASS 136_verify_tally_sub_tally_acc_after_its_exp.json: sub tally acc after its exp
+PASS 137_verify_tally_failed_tally.json: failed tally
+PASS 138_verify_tally_pending_tally.json: pending tally
+PASS 139_verify_call_forward_call_at_leaf_exp.json: forward call at leaf exp
+PASS 140_verify_call_forward_call_after_root_exp.json: forward call after root exp
+PASS 141_verify_call_standing_undo_after_leaf_exp.json: standing undo after leaf exp
+PASS 142_verify_call_standing_tallies_after_root_exp.json: standing tallies after root exp
+PASS 143_verify_call_standing_call_by_holder_after_exp.json: standing call by holder after exp
+PASS 144_verify_tally_undo_tally_acc_after_exp.json: undo tally acc after exp
+PASS 145_verify_tally_forward_tally_acc_at_leaf_exp.json: forward tally acc at leaf exp
+PASS 146_verify_revoke_revoke_root_by_its_issuer.json: revoke root by its issuer
+PASS 147_verify_revoke_revoke_leaf_by_the_root_issuer.json: revoke leaf by the root issuer
+PASS 148_verify_revoke_revoke_leaf_by_its_issuer.json: revoke leaf by its issuer
+PASS 149_verify_revoke_key-wide_revoke.json: key-wide revoke
+PASS 150_verify_revoke_revoke_after_expiry.json: revoke after expiry
+PASS 151_verify_revoke_revoke_by_the_leaf_holder.json: revoke by the leaf holder
+PASS 152_verify_revoke_revoke_by_a_stranger.json: revoke by a stranger
+PASS 153_verify_revoke_revoke_leaf_mismatch.json: revoke leaf mismatch
+PASS 154_verify_revoke_revoke_chain_out_of_order.json: revoke chain out of order
+PASS 155_verify_revoke_key-wide_revoke_with_a_chain.json: key-wide revoke with a chain
+PASS 156_verify_revoke_revoke_of_one_writ_without_a_chain.json: revoke of one writ without a chain
+PASS 157_verify_revoke_revoke_wrong_signer.json: revoke wrong signer
+PASS 158_verify_revoke_revoke_iss_not_a_key.json: revoke iss not a key
+PASS 159_verify_revoke_revoke_writ_not_a_hash.json: revoke writ not a hash
+PASS 160_verify_revoke_revoke_typ_call.json: revoke typ call
+PASS 161_verify_revoke_revoke_chain_of_nine.json: revoke chain of nine
+PASS 162_verify_revoke_key-wide_with_chain_and_wrong_signer_is_malformed_first.json: key-wide with chain and wrong signer is malformed first
+PASS 163_verify_revoke_bad_writ_in_chain_before_revoke_signature.json: bad writ in chain before revoke signature
+PASS 164_verify_revoke_wrong_signer_before_leaf_mismatch.json: wrong signer before leaf mismatch
+PASS 165_verify_revoke_leaf_mismatch_before_standing.json: leaf mismatch before standing
+PASS 166_verify_call_standing_call_undefined_operation.json: standing call undefined operation
+PASS 167_verify_call_standing_call_by_a_stranger_to_an_undefined_operation.json: standing call by a stranger to an undefined operation
+PASS 168_narrows_child_before_parent.json: child before parent
+PASS 169_narrows_members_before_type.json: members before type
+PASS 170_narrows_type_before_value_type.json: type before value type
+PASS 171_narrows_set_elements_in_array_order.json: set elements in array order
+PASS 172_narrows_window_shape_before_order.json: window shape before order
+PASS 173_canonicalize_nesting_at_the_limit.json: nesting at the limit
+PASS 174_canonicalize_nesting_over_the_limit.json: nesting over the limit
+PASS 175_canonicalize_nesting_before_number_rules.json: nesting before number rules
+PASS 176_verify_writ_writ_nesting_at_the_limit.json: writ nesting at the limit
+PASS 177_verify_writ_writ_nesting_over_the_limit.json: writ nesting over the limit
+PASS 178_verify_writ_writ_nesting_before_number_rules.json: writ nesting before number rules
+PASS 179_verify_writ_binary_encoding_before_version.json: binary encoding before version
+PASS 180_verify_writ_non_string_binary_member_waits_for_step_5.json: non string binary member waits for step 5
+PASS 181_verify_writ_empty_binary_member.json: empty binary member
+PASS 182_verify_writ_crit_array_type_before_names.json: crit array type before names
+PASS 183_verify_writ_crit_names_in_array_order.json: crit names in array order
+PASS 184_verify_writ_iss_key_before_bnd.json: iss key before bnd
+PASS 185_verify_writ_hld_key_before_exp.json: hld key before exp
+PASS 186_verify_writ_act_presence_before_bounds.json: act presence before bounds
+PASS 187_verify_writ_bounds_in_canonical_name_order.json: bounds in canonical name order
+PASS 188_verify_writ_bound_order_is_utf16_order.json: bound order is utf16 order
+PASS 189_verify_writ_section_3_before_section_3.2.json: section 3 before section 3.2
+PASS 190_verify_call_from_key_before_args.json: from key before args
+PASS 191_verify_call_own_members_before_chain_writs.json: own members before chain writs
+PASS 192_verify_call_sig_member_before_chain_writs.json: sig member before chain writs
+PASS 193_verify_call_chain_writs_before_call_signature.json: chain writs before call signature
+PASS 194_verify_call_id_before_chain_length.json: id before chain length
+PASS 195_verify_call_version_before_chain_length.json: version before chain length
+PASS 196_verify_call_chain_length_before_element_type.json: chain length before element type
+PASS 197_verify_tally_tally_signature_before_wrt_contents.json: tally signature before wrt contents
+PASS 198_verify_tally_tally_signature_before_sub_unmatched.json: tally signature before sub_unmatched
+PASS 199_verify_tally_op_before_wrt_contents.json: op before wrt contents
+PASS 200_verify_tally_acc_before_body.json: acc before body
+PASS 201_verify_tally_wrt_before_sub.json: wrt before sub
+PASS 202_verify_tally_sub_unmatched_before_the_sub_tally.json: sub_unmatched before the sub tally
+PASS 203_verify_tally_depth_applies_to_wrt.json: depth applies to wrt
+PASS 204_verify_tally_depth_honored_in_wrt.json: depth honored in wrt
+PASS 205_verify_tally_pending_tally_with_another_err_code.json: pending tally with another err code
+PASS 206_verify_tally_pending_tally_with_wrt.json: pending tally with wrt
+PASS 207_verify_chain_elements_before_writs.json: elements before writs
+PASS 208_verify_tally_sub_writ_member_not_a_string.json: sub writ member not a string
+PASS 209_verify_revoke_iss_before_chain_length.json: iss before chain length
+PASS 210_verify_tally_nested_intermediaries_report_nothing.json: nested intermediaries report nothing
+PASS 211_verify_tally_nested_fan_out_rolled_up_past_the_root_max.json: nested fan out rolled up past the root max
+PASS 212_verify_tally_branching_tree_within_the_root_max.json: branching tree within the root max
+PASS 213_verify_tally_own_used_below_its_sub_tally.json: own used below its sub tally
+
+Total: 213  Passed: 213  Failed: 0
