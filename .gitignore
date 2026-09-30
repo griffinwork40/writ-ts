@@ -1,3 +1,4 @@
 node_modules/
 *.bak
 reports/latest-run.txt
+out/

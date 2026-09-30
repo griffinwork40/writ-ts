@@ -1,0 +1,73 @@
+[
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "_Bi_Q5cQ0fAmR2-p0UetNVaBrONI80Dswn9PsPTOl6k",
+      "writ": "4w3HZwVxM55lp5JaCAlKeYINycN9yHgvVRlaPISod7s",
+      "op": "travel/charge",
+      "acc": 1788400010,
+      "st": "ok",
+      "err": null,
+      "out": "5kmtVpEXh2Trk-obCCg1BRR_UIwgj0cKPFqWQSKS1AQ",
+      "used": {
+        "amount": 58900
+      },
+      "rev": {
+        "until": 1788486400
+      },
+      "sub": [],
+      "wrt": [],
+      "sig": "zciJoF65m5o5hTp6Jpr1KUoF1GPc9FbfO7hOLnPyLTXFpqO5daG7K4Z9m0ZJ3jeE5UQRzItXsXYZFsFz4vBDBg"
+    },
+    "res": {
+      "charge": "ch_1"
+    }
+  },
+  {
+    "inflight": true
+  },
+  {
+    "resolved": 1
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "eaqhRQ5gQF3ACTzX9etLH2IHRl5hRAnpZ3z4K6pXGAY",
+      "writ": "4w3HZwVxM55lp5JaCAlKeYINycN9yHgvVRlaPISod7s",
+      "op": "sys/undo",
+      "acc": 1788400020,
+      "st": "failed",
+      "err": {
+        "code": "unknown_outcome"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "HmNxsQYsSB9SHkAapJ7BP89umLyhxZGlfzkSN-AB4Su8FjJIMpElPMKnAh2ghOU09pNNUEoTqUYDfTb6jRebCw"
+    }
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "QI7LkHHGrUKEwj7dzJEKt5Ei4mIm6YJVLJxlh9jYdtw",
+      "writ": "4w3HZwVxM55lp5JaCAlKeYINycN9yHgvVRlaPISod7s",
+      "op": "sys/undo",
+      "acc": 1788400040,
+      "st": "failed",
+      "err": {
+        "code": "unknown_outcome"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "vetfsr0M6FZB9pcq1fawC-FSyePoiuHbrGQXU7LPPQ4BrfrBHZYLtgLLbeBe0BzX4uxaYjGVi0vlcmP-OI6mDg"
+    }
+  }
+]

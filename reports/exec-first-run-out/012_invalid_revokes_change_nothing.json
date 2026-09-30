@@ -1,0 +1,55 @@
+[
+  {
+    "error": "chain_broken"
+  },
+  {
+    "error": "no_standing"
+  },
+  {
+    "error": "malformed"
+  },
+  {
+    "error": "bad_signature"
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "HrLZ4CWk4DD6ZrmbhQQb4_a7hfJ_gmir6KsihP7le-Y",
+      "writ": "dOSFIXUO4oAzmMbLiwoNqYp1K0YDxljQ1IGAKSIA7BQ",
+      "op": "travel/x",
+      "acc": 1788400020,
+      "st": "ok",
+      "err": null,
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "yrgmXgakknov3D6ARe4gqnkTg_3rKysUuuheLZzcwIQjF4YT6O_xxOxlCaCKXpRfswAFfyXrKYkDiNKh8lStCg"
+    }
+  },
+  {
+    "tallies": []
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "6r5Hp9zwbJjMq0W3KWx2mFEs10Z7fycbW2LzhKgg-J8",
+      "writ": "dOSFIXUO4oAzmMbLiwoNqYp1K0YDxljQ1IGAKSIA7BQ",
+      "op": "travel/y",
+      "acc": 1788400040,
+      "st": "failed",
+      "err": {
+        "code": "revoked"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "0y0F5V9MtL8nXIAgzhSJCIwA5QHqumwo_SGqiEEllGEO8ncjv2-cOdLzL5elhtnXmm2WMlC2oeBWRqaUixh_Dw"
+    }
+  }
+]

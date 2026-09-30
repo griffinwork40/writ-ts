@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "conformance": "node src/runner.ts",
-    "test": "node --test src/test.ts",
+    "scenarios": "node src/scenario-driver.ts",
+    "test": "node --test src/test.ts src/exec-test.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

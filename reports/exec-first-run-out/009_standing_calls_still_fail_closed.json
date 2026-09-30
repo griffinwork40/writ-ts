@@ -1,0 +1,110 @@
+[
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "UXDxUEQ7LL2HK2Oknl3uVxt1Fo8Sprd71yXwFm8qrAw",
+      "writ": "nfk5L47yEpa8u3XrcdNA2vtZm1MelHyi8Vbn-iMhU0g",
+      "op": "travel/charge",
+      "acc": 1788400010,
+      "st": "ok",
+      "err": null,
+      "out": "5kmtVpEXh2Trk-obCCg1BRR_UIwgj0cKPFqWQSKS1AQ",
+      "used": {
+        "amount": 58900
+      },
+      "rev": {
+        "until": 1788486400
+      },
+      "sub": [],
+      "wrt": [],
+      "sig": "mO9boOJ8ICVro6iIt7UezfM4NaNk7jodFnNLntGKmU_8HH0wlu5kvcJC5HevzGv_RHDLdayjbzr63iisNlJuDg"
+    },
+    "res": {
+      "charge": "ch_1"
+    }
+  },
+  {
+    "error": "bad_signature"
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "95JtvFSQgUNaiIpnsacwN9LAbNcGymuTEaLJ3YdnwGo",
+      "writ": "lrky_cbSVP8HT2_2YQ_DCWUlvH6qdMY_gKyAFDfr2wo",
+      "op": "sys/undo",
+      "acc": 1788403660,
+      "st": "failed",
+      "err": {
+        "code": "chain_broken"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "u-YUw2lNMd2hDfPqij8n7XEL7WU8A1db6bCTAxx1-PN88MW_ENwxqCIF060O8XdSA8UzrGnI08i7Pvuk_5LZAQ"
+    }
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "H3-5s7wnt5PH3hVyb7xCfjRlTQBCRtGhM5OOt6PlRUk",
+      "writ": "vh_bpbV64-04wviR-jH2zUG24_7iKapCqTqwgIl7Hws",
+      "op": "sys/tallies",
+      "acc": 1788403660,
+      "st": "failed",
+      "err": {
+        "code": "root_not_accepted"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "9Ya5TqCHw4uQe6e4OjEpWqo_JaOlG-FADRUB7oZUfmPViYXLumtNr1OrhzvfQJaFfqXgmYPFFiThZLSw7wcmDg"
+    }
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "cBlN_GEKegtDygD4_HrlHWXJdc2Bw2JZapJk3n2u7Dg",
+      "writ": "lrky_cbSVP8HT2_2YQ_DCWUlvH6qdMY_gKyAFDfr2wo",
+      "op": "sys/tallies",
+      "acc": 1788403660,
+      "st": "failed",
+      "err": {
+        "code": "wrong_executor"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "iBu82fTWwdZKq099VE_LOEPO2eo4n5N1bEaXv31yER7REaTlM5Biy1-2tFBADvKk7HL8Fz3HW5Osct_FsEDFDQ"
+    }
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "9NT3Qohac_nYDnJufshkTR3dHM19-Z4Dk60rqjoXhaA",
+      "writ": "nfk5L47yEpa8u3XrcdNA2vtZm1MelHyi8Vbn-iMhU0g",
+      "op": "sys/other",
+      "acc": 1788403660,
+      "st": "failed",
+      "err": {
+        "code": "forbidden_op"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "LYB1WiYnC7QYO6xPdSU2ZQnLoyT4x_mGDEYl-342B2EdzBxlFEqONoASbIWEAoT_E_9iRm_wxq2JB9dusuO_Bg"
+    }
+  }
+]

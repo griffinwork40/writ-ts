@@ -1,0 +1,29 @@
+PASS 001_count_replay_and_root_acceptance.json
+PASS 002_forward_call_checks_in_order.json
+PASS 003_count_rejection_consumes_nothing.json
+PASS 004_several_count_bounds_on_one_writ_the_smallest_holds.json
+FAIL 005_undo_standing_and_idempotency.json: first bad step 5 (do=call, note="a new undo call performs nothing and returns the reversal's body")
+     expected: {"res": {"refund": "rf_1"}, "tally": {"acc": 1788400040, "call": "8Hp_ZfMPaKW1e4hU75Dk_AR2zt8ERMZbKtVgyosIiG8", "err": null, "op": "sys/undo", "out": "GUBj91CyxMGDQRtH2YF61Daz_J3a2jFTsFI2lavwBVQ", "rev": null, "sig": "SF0hzbbjlNRWRBYLVTZG3T0PpSbLhDjubCuPqxQmjJS63eW_BV5DkWiMM4sIEwhXcI5Stl6TSkvA2LhhhwJgAA", "st": "ok", "sub": [], "typ": "tally", "used": {}, "v": 1, "writ": "AuPf8A1Y40fzSHcKH7ELElEWFKsUvLqTTAQ6AOsYpgg", "wrt": []}}
+     got:      {"tally": {"acc": 1788400040, "call": "8Hp_ZfMPaKW1e4hU75Dk_AR2zt8ERMZbKtVgyosIiG8", "err": null, "op": "sys/undo", "out": "GUBj91CyxMGDQRtH2YF61Daz_J3a2jFTsFI2lavwBVQ", "rev": null, "sig": "SF0hzbbjlNRWRBYLVTZG3T0PpSbLhDjubCuPqxQmjJS63eW_BV5DkWiMM4sIEwhXcI5Stl6TSkvA2LhhhwJgAA", "st": "ok", "sub": [], "typ": "tally", "used": {}, "v": 1, "writ": "AuPf8A1Y40fzSHcKH7ELElEWFKsUvLqTTAQ6AOsYpgg", "wrt": []}}
+PASS 006_undo_targets_and_bounds.json
+FAIL 007_a_failed_reversal_can_be_retried.json: first bad step 3 (do=call, note='and after one succeeds, later undos run nothing')
+     expected: {"res": {"refund": "rf_1"}, "tally": {"acc": 1788400040, "call": "pN3MND-khIDp_u2A085zvR0sQ_nTArcYpyn0FwaQ3Zw", "err": null, "op": "sys/undo", "out": "GUBj91CyxMGDQRtH2YF61Daz_J3a2jFTsFI2lavwBVQ", "rev": null, "sig": "RRbftRTYv0MBNvBCNa-R_4vO_AztShGDRlkcKVrsFYUIDCmjyfod-5S6YvHyblc3MBRCKBz0Mz1X8xzZp0RpAA", "st": "ok", "sub": [], "typ": "tally", "used": {}, "v": 1, "writ": "ROfQhtDMWw5TMyks9cTHEefx8mso_MjvfO-LF_U71Kc", "wrt": []}}
+     got:      {"tally": {"acc": 1788400040, "call": "pN3MND-khIDp_u2A085zvR0sQ_nTArcYpyn0FwaQ3Zw", "err": null, "op": "sys/undo", "out": "GUBj91CyxMGDQRtH2YF61Daz_J3a2jFTsFI2lavwBVQ", "rev": null, "sig": "RRbftRTYv0MBNvBCNa-R_4vO_AztShGDRlkcKVrsFYUIDCmjyfod-5S6YvHyblc3MBRCKBz0Mz1X8xzZp0RpAA", "st": "ok", "sub": [], "typ": "tally", "used": {}, "v": 1, "writ": "ROfQhtDMWw5TMyks9cTHEefx8mso_MjvfO-LF_U71Kc", "wrt": []}}
+FAIL 008_standing_survives_expiry.json: first bad step 7 (do=call, note='idempotent after expiry too')
+     expected: {"res": {"refund": "rf_1"}, "tally": {"acc": 1788403680, "call": "PgnT_tf-hFoyA8yeZnvCpC7muwHph5opWJVzS3etajQ", "err": null, "op": "sys/undo", "out": "GUBj91CyxMGDQRtH2YF61Daz_J3a2jFTsFI2lavwBVQ", "rev": null, "sig": "THKOdxCzeSHrP2m_LPVbmFWeM0oOdwRWnEqw-oYG_ut-EWgb_dQjybBFGn-pMnJSuwjKnMrpwEQRxErAc3z5AQ", "st": "ok", "sub": [], "typ": "tally", "used": {}, "v": 1, "writ": "d_w7FnA4bQwfLdDgNIYoAhNPTJFuXVsGqORJH5Ruqbg", "wrt": []}}
+     got:      {"tally": {"acc": 1788403680, "call": "PgnT_tf-hFoyA8yeZnvCpC7muwHph5opWJVzS3etajQ", "err": null, "op": "sys/undo", "out": "GUBj91CyxMGDQRtH2YF61Daz_J3a2jFTsFI2lavwBVQ", "rev": null, "sig": "THKOdxCzeSHrP2m_LPVbmFWeM0oOdwRWnEqw-oYG_ut-EWgb_dQjybBFGn-pMnJSuwjKnMrpwEQRxErAc3z5AQ", "st": "ok", "sub": [], "typ": "tally", "used": {}, "v": 1, "writ": "d_w7FnA4bQwfLdDgNIYoAhNPTJFuXVsGqORJH5Ruqbg", "wrt": []}}
+PASS 009_standing_calls_still_fail_closed.json
+PASS 010_revoke_ends_forward_authority_not_standing.json
+PASS 011_key-wide_revoke.json
+PASS 012_invalid_revokes_change_nothing.json
+PASS 013_revoke_stops_in-flight_work_under_its_writ_only.json
+PASS 014_revoke_answers_in_call_identity_order.json
+PASS 015_revoke_leaves_a_running_undo_alone.json
+PASS 016_crash_while_running.json
+PASS 017_crash_while_reversing.json
+PASS 018_sys_tallies_order_and_contents.json
+PASS 019_undo_checks_are_part_of_the_operation_after_replay.json
+PASS 020_sys_tallies_names_a_writ_the_caller_issued_or_one_below_it.json
+PASS 021_peer_binding.json
+PASS 022_a_key-wide_revoke_survives_restart.json
+Scenarios: 19/22 pass; steps: 136/140 match

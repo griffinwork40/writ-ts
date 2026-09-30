@@ -1,0 +1,163 @@
+[
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "y8oNARLeY6on8WO_I_aXfVv_-ZTZxPlor9d3eueXPLk",
+      "writ": "DlEyo7Kj7qMhTfetBBo2RgvFVQWhxR2hwqDRqxm7hQ8",
+      "op": "travel/charge",
+      "acc": 1788400010,
+      "st": "failed",
+      "err": {
+        "code": "no_standing"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "Occ-PvIDBbXlPBtpSa0DbPFYbjGEN0Dyp0bnSd6s4W-gnELVlo_FLFV2HZsaGsTA7ys-4fUw4WF-TZso66asDg"
+    }
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "1x7ydoS3fnue7ytTGQmrd2ERVXhtFpHnJ1y93zVBW3o",
+      "writ": "DlEyo7Kj7qMhTfetBBo2RgvFVQWhxR2hwqDRqxm7hQ8",
+      "op": "travel/chargeback",
+      "acc": 1788400011,
+      "st": "failed",
+      "err": {
+        "code": "forbidden_op"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "P5NPdwiq84cSfnx6_V3ShBuwXUpUsWgeklQDKZE8LeQ-u2XDHOSo6fhCb74WY6IjD5iCyzWrZDxU_BoHoR4YDA"
+    }
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "eL7qFlAXoyjvxcQcmhtMY9krVYSRWNAtcX8WfV2l-I8",
+      "writ": "DlEyo7Kj7qMhTfetBBo2RgvFVQWhxR2hwqDRqxm7hQ8",
+      "op": "travel/charge",
+      "acc": 1788400012,
+      "st": "failed",
+      "err": {
+        "code": "missing_arg"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "JZBhR_0fhydQHG2jRRChw2wSEcXE5zQrfd_LxGCAeG7AhefLVzka3AvRi7MIxbhB8FqcM-FHJlZjovUjAuJbBQ"
+    }
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "b2GARypKE_RymdksJhUOWBZIEQ5MGNKSaZ-y8yaIZko",
+      "writ": "DlEyo7Kj7qMhTfetBBo2RgvFVQWhxR2hwqDRqxm7hQ8",
+      "op": "travel/charge",
+      "acc": 1788400013,
+      "st": "failed",
+      "err": {
+        "code": "out_of_bounds"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "rjQz_LyHbY5xtr0k242-PkwUv-VNtUUc-fdMv0DVcJet2fBOXaZlfUsK4e-wKZ6OspWgJEw2z_wte8Dnn5LaAQ"
+    }
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "cgB84I82yT02aA7UWyCPxzQ-XG8zfKl3eRgYLk2YfTM",
+      "writ": "DlEyo7Kj7qMhTfetBBo2RgvFVQWhxR2hwqDRqxm7hQ8",
+      "op": "travel/charge",
+      "acc": 1788400014,
+      "st": "failed",
+      "err": {
+        "code": "missing_arg"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "dgmHO2USh_18zU-AtfEId_dJ3AE8gR0rbaubjVpiqKGyJmLdEVkLTfmhiSUoj0_4WHzJ6YI-SwdD_9DWFN1jCw"
+    }
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "APrL7z-WQEHJ0JmpYa-yO2V1YnCu80wmJxGXP8pKRnQ",
+      "writ": "DlEyo7Kj7qMhTfetBBo2RgvFVQWhxR2hwqDRqxm7hQ8",
+      "op": "travel/charge",
+      "acc": 1788400015,
+      "st": "ok",
+      "err": null,
+      "out": "c6odNilXDkdjCOVfPcZ3NOHAU_hJL6hSGL0_HFRk_aM",
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "59ecg9tnO8n0OcSQmWoZ0NJ5vslfuC0EYxmyMLXoOKhsN9u5rqmbY2vHwCk2ul_4HGrJra3fpeemYLwxa_eiAg"
+    },
+    "res": {
+      "charge": "ch_2"
+    }
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "kXhJG52xiU1aWNn_r5KTJQ7GVG4C5EFoswflwsTH29g",
+      "writ": "DlEyo7Kj7qMhTfetBBo2RgvFVQWhxR2hwqDRqxm7hQ8",
+      "op": "travel/charge",
+      "acc": 1788401800,
+      "st": "failed",
+      "err": {
+        "code": "expired"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "_Tx3x6GC3_OluN5WmHBBdXnBdNrSbCj66pW9GVEi7jiIKNGdF5ZYbUv4k8ZyZJYxTtqwh_IOsXqwRUzwL_17Bg"
+    }
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "mUlIxOLym6mxa18CZkJjDfdURgDnROPN5c2NId15fNg",
+      "writ": "_wyI43LzMsTe5vA6KKgLW07SYQ_n0YbU-wT1MflbLX4",
+      "op": "travel/x",
+      "acc": 1788400200,
+      "st": "failed",
+      "err": {
+        "code": "expired"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "ahFf-S20pLzh0PmkZ6iHpNYkKiJZXNyROfp9-faiKMxv7jVK2FW9B4W_vO-bctzLY-8weGU4_iuN93aySKZNAA"
+    }
+  }
+]

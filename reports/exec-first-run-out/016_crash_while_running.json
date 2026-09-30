@@ -1,0 +1,111 @@
+[
+  {
+    "inflight": true
+  },
+  {
+    "resolved": 1
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "V6hu_edEQwunkUYH5BceUDM8oFmWhaAkYEU8OTBRZ6A",
+      "writ": "8JVc--Y9Cf_OxZw_d6rAhAEBEUGnQ6eY5l4kS9ImEPs",
+      "op": "travel/slow",
+      "acc": 1788400010,
+      "st": "failed",
+      "err": {
+        "code": "unknown_outcome"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "BkL6xNIqSFpyvH_fj_JulP2KMsjoH67nTUv5CfLXEg5cEWW8LgJ4D8VpNYvfM8h_24O5PAVG0QJl4YHzOQxCCQ"
+    }
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "qdDfe4G60Q1VCAPv9VkGVuGk8G17bzxJAegTOuPrSJA",
+      "writ": "8JVc--Y9Cf_OxZw_d6rAhAEBEUGnQ6eY5l4kS9ImEPs",
+      "op": "travel/again",
+      "acc": 1788400030,
+      "st": "failed",
+      "err": {
+        "code": "count_exhausted"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "hggozuxYHK239j0C5YImeaoINeLz4FiIOJKCcvOVkeYzQRhE_MqRR0ol1QW-FTXcMx1ZQP8g7gAAesvN_kJYCQ"
+    }
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "oaYZ4pF3rmUFqiNVHmQiEM-Ou-4UuhzEcJevj-V5iA4",
+      "writ": "8JVc--Y9Cf_OxZw_d6rAhAEBEUGnQ6eY5l4kS9ImEPs",
+      "op": "sys/tallies",
+      "acc": 1788400040,
+      "st": "ok",
+      "err": null,
+      "out": "Z1b_3xVv2KLmgljvG39i3RYMJdHHxfJwAg580sU4T1I",
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "lvs9ZZdydoKz5c0gK2hgbbf0Cm6FR1tfO_Er-pkVGg9L91jxf0yS310KgwBReJ4My9dGNJpWhK1rthh_LgwiAw"
+    },
+    "res": {
+      "tallies": [
+        {
+          "v": 1,
+          "typ": "tally",
+          "call": "V6hu_edEQwunkUYH5BceUDM8oFmWhaAkYEU8OTBRZ6A",
+          "writ": "8JVc--Y9Cf_OxZw_d6rAhAEBEUGnQ6eY5l4kS9ImEPs",
+          "op": "travel/slow",
+          "acc": 1788400010,
+          "st": "failed",
+          "err": {
+            "code": "unknown_outcome"
+          },
+          "out": null,
+          "used": {},
+          "rev": null,
+          "sub": [],
+          "wrt": [],
+          "sig": "BkL6xNIqSFpyvH_fj_JulP2KMsjoH67nTUv5CfLXEg5cEWW8LgJ4D8VpNYvfM8h_24O5PAVG0QJl4YHzOQxCCQ"
+        }
+      ]
+    }
+  },
+  {
+    "resolved": 0
+  },
+  {
+    "tally": {
+      "v": 1,
+      "typ": "tally",
+      "call": "V6hu_edEQwunkUYH5BceUDM8oFmWhaAkYEU8OTBRZ6A",
+      "writ": "8JVc--Y9Cf_OxZw_d6rAhAEBEUGnQ6eY5l4kS9ImEPs",
+      "op": "travel/slow",
+      "acc": 1788400010,
+      "st": "failed",
+      "err": {
+        "code": "unknown_outcome"
+      },
+      "out": null,
+      "used": {},
+      "rev": null,
+      "sub": [],
+      "wrt": [],
+      "sig": "BkL6xNIqSFpyvH_fj_JulP2KMsjoH67nTUv5CfLXEg5cEWW8LgJ4D8VpNYvfM8h_24O5PAVG0QJl4YHzOQxCCQ"
+    }
+  }
+]
