@@ -162,7 +162,7 @@ export class Executor {
     // sys/undo: checks then held or immediate
     if (op === "sys/undo") {
       const check = this.checkSysUndo(callObj, leafWritId, callIdentity, acc);
-      if (check.kind === "fail") { this.finalize(storeKey, entry, check.tally, undefined, chain); return { kind: "tally", tally: check.tally }; }
+      if (check.kind === "answered") { this.finalize(storeKey, entry, check.tally, check.res, chain); return { kind: "tally", tally: check.tally, res: check.res }; }
       this.reversalStore.set(check.targetId, { state: "begun" });
       if (!app || app.hold) {
         await new Promise<void>((res) => { this.heldOps.set(callIdentity, { resolve: (outcome) => { const r = this.completeUndo(outcome, check.targetId, callIdentity, leafWritId, acc); this.finalize(storeKey, entry, r.tally, r.res, chain); res(); }, signaled: false }); });
@@ -299,9 +299,9 @@ export class Executor {
     return { tally: t, res: body };
   }
 
-  private checkSysUndo(callObj: Record<string, unknown>, leafWritId: string, callIdentity: string, acc: number): { kind: "ok"; targetId: string } | { kind: "fail"; tally: Record<string, unknown> } {
+  private checkSysUndo(callObj: Record<string, unknown>, leafWritId: string, callIdentity: string, acc: number): { kind: "ok"; targetId: string } | { kind: "answered"; tally: Record<string, unknown>; res?: unknown } {
     const op = "sys/undo";
-    const failT = (code: string) => ({ kind: "fail" as const, tally: buildTally({ call: callIdentity, writ: leafWritId, op, acc, st: "failed" as const, err: { code }, out: null, used: {}, rev: null, sub: [], wrt: [] }, this.privKey) });
+    const failT = (code: string) => ({ kind: "answered" as const, tally: buildTally({ call: callIdentity, writ: leafWritId, op, acc, st: "failed" as const, err: { code }, out: null, used: {}, rev: null, sub: [], wrt: [] }, this.privKey) });
     const targetTallyRaw = (callObj["args"] as Record<string, unknown>)?.["tally"];
     if (targetTallyRaw === null || typeof targetTallyRaw !== "object" || Array.isArray(targetTallyRaw)) return failT("malformed");
     const tt = targetTallyRaw as Record<string, unknown>;
@@ -316,7 +316,8 @@ export class Executor {
     const rev = this.reversalStore.get(targetId);
     if (rev?.state === "succeeded") {
       const outHash = rev.resultBody !== undefined ? hashBody(rev.resultBody) : null;
-      return { kind: "fail", tally: buildTally({ call: callIdentity, writ: leafWritId, op, acc, st: "ok", err: null, out: outHash, used: {}, rev: null, sub: [], wrt: [] }, this.privKey) };
+      // Section 8.2: a later sys/undo performs nothing and is answered ok WITH the successful reversal's result body.
+      return { kind: "answered", tally: buildTally({ call: callIdentity, writ: leafWritId, op, acc, st: "ok", err: null, out: outHash, used: {}, rev: null, sub: [], wrt: [] }, this.privKey), res: rev.resultBody };
     }
     if (rev?.state === "begun") return failT("unknown_outcome");
     return { kind: "ok", targetId };

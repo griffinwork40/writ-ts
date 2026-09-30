@@ -7,10 +7,12 @@
     "conformance": "node src/runner.ts",
     "scenarios": "node src/scenario-driver.ts",
     "test": "node --test src/test.ts src/exec-test.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "scenarios:score": "node src/scenario-driver.ts && python3 scripts/score-scenarios.py conformance/scenarios out"
   },
   "devDependencies": {
     "@types/node": "^22.20.4",
     "typescript": "^5.9.3"
-  }
+  },
+  "license": "Apache-2.0"
 }

@@ -20,3 +20,15 @@ was deliberately not consulted.
 Written by an AI coding agent (agent-afk, a Claude model) directed by Griffin Long, in a
 workspace that contained only the files listed above. Disclosed so reviewers can weigh the
 result: this counts as an independent reading of the text, not as a human stranger.
+
+## Executor pass (blind)
+The executor was built in a separate copy of this repository with no git history, where every
+step's `expect` member had been removed from the 22 scenarios. The coordinating agent held the
+answers outside the builder's workspace and scored the builder's first output exactly once
+(`reports/exec-first-run-score.txt`, raw output in `reports/exec-first-run-out/`). Only then were
+the answers used, to fix the single failing cause.
+
+Known limit on blindness: some later steps carry objects produced by earlier steps (a `sys/undo`
+carries the tally it reverses), so part of an earlier answer is visible in a later input. The
+builder reported not using this. Its notes say "verified by scenario N" in places; without the
+answers, that can only mean the scenario ran without error or was reasoned about from its inputs.

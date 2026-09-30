@@ -1,0 +1,23 @@
+PASS 001_count_replay_and_root_acceptance.json
+PASS 002_forward_call_checks_in_order.json
+PASS 003_count_rejection_consumes_nothing.json
+PASS 004_several_count_bounds_on_one_writ_the_smallest_holds.json
+PASS 005_undo_standing_and_idempotency.json
+PASS 006_undo_targets_and_bounds.json
+PASS 007_a_failed_reversal_can_be_retried.json
+PASS 008_standing_survives_expiry.json
+PASS 009_standing_calls_still_fail_closed.json
+PASS 010_revoke_ends_forward_authority_not_standing.json
+PASS 011_key-wide_revoke.json
+PASS 012_invalid_revokes_change_nothing.json
+PASS 013_revoke_stops_in-flight_work_under_its_writ_only.json
+PASS 014_revoke_answers_in_call_identity_order.json
+PASS 015_revoke_leaves_a_running_undo_alone.json
+PASS 016_crash_while_running.json
+PASS 017_crash_while_reversing.json
+PASS 018_sys_tallies_order_and_contents.json
+PASS 019_undo_checks_are_part_of_the_operation_after_replay.json
+PASS 020_sys_tallies_names_a_writ_the_caller_issued_or_one_below_it.json
+PASS 021_peer_binding.json
+PASS 022_a_key-wide_revoke_survives_restart.json
+Scenarios: 22/22 pass; steps: 140/140 match

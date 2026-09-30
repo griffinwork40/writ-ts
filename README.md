@@ -1,94 +1,53 @@
 # writ-ts
 
-An independent TypeScript verifier for the [Writ protocol](spec/writ-v0.1.md), written from the specification alone as part of the "stranger test" described in the upstream roadmap.
+An independent TypeScript implementation of the [Writ protocol](https://github.com/pete-builds/writ-protocol)
+(spec v0.1): a verifier and an executor, written from the specification alone for the "stranger test"
+in the upstream roadmap. It has zero runtime dependencies (Node 24, `node:crypto` only).
 
-See [PROVENANCE.md](PROVENANCE.md) for the independence rule and what was deliberately not read.
+Read [PROVENANCE.md](PROVENANCE.md) first. It says what was and was not read, how the blind executor
+run was set up, and that the code was written by an AI coding agent under human direction.
 
-## What it is
+## Results against the upstream corpus (commit 6552968)
 
-This implements all seven conformance operations defined in spec section 14:
+| Part | Blind first run | Final | Notes |
+|---|---|---|---|
+| Verifier, 213 vectors | not blind (see below) | 213/213 | vectors were used during development |
+| Executor, 22 scenarios (140 steps) | **19/22 scenarios, 136/140 steps** | 22/22, 140/140 | one bug, one cause: a repeat `sys/undo` omitted the stored reversal's result body |
 
-| Operation | Checks |
-|---|---|
-| `canonicalize` | Sections 1.1 and 1.2 (JCS with Writ integer restrictions) |
-| `narrows` | Section 3 bound narrowing |
-| `satisfies` | Section 3 bound satisfaction |
-| `verify_writ` | Section 6.1 (single writ object) |
-| `verify_chain` | Section 4 (chain verification as operation) |
-| `verify_call` | Sections 6.1 + 4 + 5 + 7 steps 1-2 (no executor state) |
-| `verify_tally` | Section 6.2 (full tally tree) |
-| `verify_revoke` | Section 9.1 (revoke verification) |
+Every tally signature in the blind executor run that the scenarios check matched upstream byte for byte.
 
-**Not implemented:** executor scenarios (section 14.1). Those require stateful executor behavior (count store, call store, tally store, revoke store) and are out of scope for this verification-only pass.
+Spec findings for upstream are in [reports/divergences.md](reports/divergences.md):
+- **Section 1.1 rule 7** (spec-ambiguous): "the outermost value being level 1" allows two readings of
+  whether a scalar adds a nesting level. Vector 176 encodes one.
+- **Section 9.1** (spec-silent): the `err.code` of the `canceled` tally a revoke answers for a call not
+  yet accepted is never stated, and `canceled` is not a section 11 reason code. No vector or scenario
+  covers it, so two conforming executors can sign different bytes.
 
-## Runtime dependencies
-
-Zero. Uses only:
-- `node:crypto` for Ed25519 (SPKI DER format) and SHA-256
-- JCS, base64url, base58btc, and did:key implemented from scratch
-
-## How to run
+## Run it
 
 ```sh
-# Install dev dependencies (typescript + @types/node only)
-npm install
-
-# Run the full conformance corpus (213 vectors)
-node --experimental-strip-types src/runner.ts
-
-# Run unit tests
-node --test src/test.ts
-
-# Type check (no emit)
-npx tsc --noEmit
+npm install                 # dev dependencies only: typescript, @types/node
+npm run conformance         # verifier: 213 vectors -> reports/latest-run.txt
+npm run scenarios:score     # executor: runs the 22 scenarios into out/ and scores them
+npm test                    # 59 unit tests
+npm run typecheck
 ```
 
-## Results
-
-**First committed run:** 213/213 pass (not blind: vectors were used during development; see reports/divergences.md)  
-**Final run:** 213/213 pass  
-**Unit tests:** 44/44 pass  
-**`tsc --noEmit`:** clean
-
-## Files
+## Layout
 
 ```
-src/
-  encoding.ts          # base64url, base58btc, did:key, SHA-256, Ed25519
-  jcs.ts               # JSON Canonicalization Scheme (RFC 8785)
-  bounds.ts            # section 3: bound types, narrowing, satisfaction
-  verify-primitives.ts # shared verification primitives (types, depth, binary, signing)
-  verify-writ.ts       # section 6.1 (writ), section 4 (chain), section 7 (call)
-  verify-tally.ts      # section 6.2 (tally tree), section 9.1 (revoke)
-  verify.ts            # re-export facade
-  ops.ts               # conformance operation handlers
-  runner.ts            # conformance runner (reads conformance/vectors/)
-  test.ts              # unit tests
-
+spec/                 upstream spec, unmodified
+conformance/          upstream vectors and scenarios, unmodified
+src/                  jcs, encoding (base64url, base58btc, did:key, Ed25519), bounds,
+                      verify-*, ops, runner; executor, exec-*, sign-tally, scenario-driver
+scripts/score-scenarios.py   compares out/ with the scenarios' expected answers
 reports/
-  first-run.txt        # first committed run (after development-time fixes; not a blind run)
-  final-run.txt        # final run results
-  divergences.md       # analysis of every deviation from expected behavior
+  first-run.txt, final-run.txt       verifier runs
+  exec-first-run-score.txt           blind executor score, untouched
+  exec-first-run-out/                the blind executor output, untouched
+  exec-final-run-score.txt           after the one fix
+  exec-notes.md                      ambiguities the executor builder recorded while building
+  divergences.md                     findings, with a coordinator review of each classification
 ```
 
-No source file exceeds 350 lines.
-
-## Divergences
-
-See [reports/divergences.md](reports/divergences.md) for the full analysis.
-
-All bugs found were `our-bug` (clear spec requirements misimplemented). No
-`spec-ambiguous`, `spec-silent`, or `vector-suspect` items were identified.
-
-The three categories of bugs:
-1. **RFC 8785 escape rules** — named control character escapes (`\r`, `\n`, etc.) and surrogate-pair handling in canonical string output.
-2. **Nesting depth counting** — scalars should not count as a nesting level; depth check must happen before number rules in the parser.
-3. **`crit` two-pass ordering** — all elements' types checked before any name is looked up.
-
-## Independence statement
-
-See [PROVENANCE.md](PROVENANCE.md). No upstream implementation code, design docs,
-or `conformance/ADVERSARIAL.md` was read during development. The implementation
-was built from `spec/writ-v0.1.md` alone. General cryptographic knowledge
-(Ed25519/RFC 8032, SHA-256, RFC 8785 JCS, did:key/multicodec/base58btc) was
-recalled from training, not from Writ-specific code.
+No source file exceeds 350 lines. Apache 2.0, the same license as upstream.

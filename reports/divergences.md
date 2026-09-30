@@ -21,7 +21,21 @@
 >      before any other rule of this section is applied." Vector 175 matches the text.
 > 3. Issues 1 and 3 stay `our-bug`: RFC 8785 section 3.2.2.2 and section 6.1 step 4 are explicit.
 >
-> Net result for upstream: one `spec-ambiguous` finding (2a), zero `vector-suspect`.
+> Verifier net result: one `spec-ambiguous` finding (2a), zero `vector-suspect`.
+
+> **Executor pass (2026-09-30).** Blind first run: 19/22 scenarios, 136/140 steps.
+> - `our-bug`: a repeat `sys/undo` after a successful reversal returned the right signed tally
+>   (`out` included) but left out `res`. Section 8.2 is explicit ("answered `ok` with the successful
+>   reversal's result body"), and so is the section 9 reversal store row. Affected scenarios 005
+>   (steps 5 and 6), 007 (step 3), and 008 (step 7). Fixed; 22/22 after.
+> - **`spec-silent`, section 9.1**: a revoke answers "`canceled` for calls not yet accepted", but
+>   nothing states that tally's `err.code`. `canceled` is not a section 11 reason code, and the
+>   2026-09-23 revision pinned the analogous pending tally's `err` (`{"code":"pending"}`, section 6)
+>   but not this one. The builder chose `"canceled"`; `revoked` is the obvious other candidate. No
+>   vector or scenario reaches this path, so two conforming executors can sign different bytes.
+>   Suggested fix: state the code, likely `revoked`, and add a scenario.
+> - The other items in `exec-notes.md` were judged clear from the spec text on review.
+
 
 
 **Result: 213/213 pass on first run after iterative debugging.**
