@@ -37,7 +37,7 @@ npm install
 node --experimental-strip-types src/runner.ts
 
 # Run unit tests
-node --experimental-strip-types --test src/test.ts
+node --test src/test.ts
 
 # Type check (no emit)
 npx tsc --noEmit
@@ -45,7 +45,7 @@ npx tsc --noEmit
 
 ## Results
 
-**First run:** 213/213 pass  
+**First committed run:** 213/213 pass (not blind: vectors were used during development; see reports/divergences.md)  
 **Final run:** 213/213 pass  
 **Unit tests:** 44/44 pass  
 **`tsc --noEmit`:** clean
@@ -66,7 +66,7 @@ src/
   test.ts              # unit tests
 
 reports/
-  first-run.txt        # raw first-run results (committed before any fixes)
+  first-run.txt        # first committed run (after development-time fixes; not a blind run)
   final-run.txt        # final run results
   divergences.md       # analysis of every deviation from expected behavior
 ```

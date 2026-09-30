@@ -101,7 +101,7 @@ function main(): void {
   console.log(report);
 
   // write to reports/
-  const outPath = process.env["REPORT_OUT"] ?? "reports/first-run.txt";
+  const outPath = process.env["REPORT_OUT"] ?? "reports/latest-run.txt";
   mkdirSync("reports", { recursive: true });
   writeFileSync(outPath, report, "utf8");
   console.error(`\nReport written to ${outPath}`);

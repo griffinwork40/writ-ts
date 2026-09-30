@@ -4,7 +4,7 @@
   "description": "Independent TypeScript verifier for the Writ protocol",
   "type": "module",
   "scripts": {
-    "conformance": "node --input-type=module < src/runner.ts",
+    "conformance": "node src/runner.ts",
     "test": "node --test src/test.ts",
     "typecheck": "tsc --noEmit"
   },

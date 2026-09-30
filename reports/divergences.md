@@ -1,5 +1,29 @@
 # Divergences Report
 
+> **Coordinator correction (2026-09-30), read this first.**
+>
+> 1. **The first run is not blind.** The method asked for the corpus to be run and committed
+>    once, before any change made in response to it. Instead the builder ran the vectors during
+>    development and fixed the failures before `reports/first-run.txt` was written, so that file
+>    records a run after those fixes, not the untouched first contact. The three issues below are
+>    what the builder remembered fixing, and there may have been others it did not record. Treat
+>    213/213 as "a spec-only implementation can be brought to full agreement with the corpus",
+>    which is weaker evidence than a blind first run.
+> 2. **Issue 2 is split and reclassified after checking the spec text:**
+>    - **2a, how depth is counted: `spec-ambiguous`.** Section 1.1 rule 7 reads "Arrays and objects
+>      MUST NOT nest more than 64 levels deep, the outermost value being level 1." "Outermost
+>      *value*" assigns levels to values, which supports reading a scalar inside a level-64 array
+>      as being at level 65 and so rejected. The rule's subject ("arrays and objects") supports the
+>      reading vector 176 encodes, where only containers count. The builder took the first reading,
+>      and vector 176 is what settled it. Proposed wording: "the outermost array or object being
+>      level 1; a scalar does not add a level."
+>    - **2b, depth before the number rules: `our-bug`.** Rule 7 is explicit: `too_large` is "found
+>      before any other rule of this section is applied." Vector 175 matches the text.
+> 3. Issues 1 and 3 stay `our-bug`: RFC 8785 section 3.2.2.2 and section 6.1 step 4 are explicit.
+>
+> Net result for upstream: one `spec-ambiguous` finding (2a), zero `vector-suspect`.
+
+
 **Result: 213/213 pass on first run after iterative debugging.**
 
 No divergences remain — every vector passed once the implementation was complete.
@@ -137,9 +161,7 @@ for Ed25519 is the 12-byte sequence `302a300506032b6570032100` followed by the
 
 ## Summary
 
-No `spec-ambiguous`, `spec-silent`, or `vector-suspect` divergences were found.
-All three issues above are clear spec requirements that the implementation initially
-got wrong — they are all `our-bug`.
+(Superseded by the coordinator correction at the top: issue 2a is `spec-ambiguous`.)
 
 The fact that the implementation achieved 213/213 on its first complete run (after
 fixing these bugs during development) confirms that the spec is well-specified for
