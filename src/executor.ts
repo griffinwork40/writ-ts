@@ -208,7 +208,8 @@ export class Executor {
         held.signaled = true;
         tallies.push(buildTally({ call: callIdentity, writ: p.leafWritId, op, acc: p.acc, st: "pending", err: { code: "pending" }, out: null, used: {}, rev: null, sub: [], wrt: [] }, this.privKey));
       } else {
-        const ct = buildTally({ call: callIdentity, writ: p.leafWritId, op, acc: now, st: "canceled", err: { code: "canceled" }, out: null, used: {}, rev: null, sub: [], wrt: [] }, this.privKey);
+        // Spec 9.1 is silent on this err.code; "revoked" matches every canceled tally in the upstream corpus.
+        const ct = buildTally({ call: callIdentity, writ: p.leafWritId, op, acc: now, st: "canceled", err: { code: "revoked" }, out: null, used: {}, rev: null, sub: [], wrt: [] }, this.privKey);
         this.callStore.set(storeKey, { state: "final", acc: now, tallyObj: ct, callObj: p.callObj, leafWritId: p.leafWritId, callId: p.callId });
         this.storeTally(objectIdentity(ct), ct, undefined, chain);
         tallies.push(ct);

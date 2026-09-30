@@ -31,7 +31,7 @@
 > - **`spec-silent`, section 9.1**: a revoke answers "`canceled` for calls not yet accepted", but
 >   nothing states that tally's `err.code`. `canceled` is not a section 11 reason code, and the
 >   2026-09-23 revision pinned the analogous pending tally's `err` (`{"code":"pending"}`, section 6)
->   but not this one. The builder chose `"canceled"`; `revoked` is the obvious other candidate. No
+>   but not this one. The builder chose `"canceled"`; the coordinator switched it to `revoked`, the code every canceled tally in the upstream corpus carries. No
 >   vector or scenario reaches this path, so two conforming executors can sign different bytes.
 >   Suggested fix: state the code, likely `revoked`, and add a scenario.
 > - The other items in `exec-notes.md` were judged clear from the spec text on review.
